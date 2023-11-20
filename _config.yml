@@ -9,3 +9,6 @@ logo: /assets/OS2compliance_logo.svg
 aux_links:
   github.com/os2compliance: https://github.com/OS2compliance/OS2compliance
   os2.eu/os2compliance: https://www.os2.eu/os2compliance
+
+plugins:
+  - jekyll-relative-links
