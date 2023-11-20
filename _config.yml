@@ -1,8 +1,11 @@
-title: Just the Docs Template
-description: A starter template for a Jeykll site using the Just the Docs theme!
+title: OS2compliance documentation
+description: This repository contains documentation for OS2compliance
 theme: just-the-docs
 
-url: https://just-the-docs.github.io
+url: https://os2compliance.github.io/OS2compliance-docs/
+
+logo: /assets/OS2compliance_logo.svg
 
 aux_links:
-  Template Repository: https://github.com/just-the-docs/just-the-docs-template
+  github.com/os2compliance: https://github.com/OS2compliance/OS2compliance
+  os2.eu/os2compliance: https://www.os2.eu/os2compliance
