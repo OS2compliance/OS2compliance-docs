@@ -13,3 +13,6 @@ Is used to fetch users and organisations, in time hopefully KLE as well.
   
 ## Mail
 Simple SMTP client for e-mail integration.  
+  
+## DBS Platform
+Synkroniserer tilsyn (oversights), leverandører og systemer fra DBS-platformen pr. kommune.  
