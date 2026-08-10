@@ -1,7 +1,7 @@
 ---
 title: Hosting
 layout: home
-nav_order: 5
+nav_order: 6
 ---
 # Hosting
 OS2compliance is a Java spring application, that can compile to a jar file and be run with a JDK.  
