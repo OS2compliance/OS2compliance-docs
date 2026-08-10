@@ -1,7 +1,7 @@
 ---
 title: Architecture
 layout: default
-nav_order: 2
+nav_order: 3
 ---
 # Architecture
 
@@ -41,7 +41,7 @@ All integrations to external services are **outbound HTTPS calls initiated by OS
 | [KITOS](integrations/kitos.md) | Outbound, read **and** write | Imports IT systems, suppliers and contracts, and matches KITOS users to existing OS2compliance users. Writes risk assessment and DPIA results back to the IT system usage in KITOS. |
 | [OS2sync / FK Organisation](integrations/os2sync.md) | Outbound, read | Imports the organisation hierarchy: organisation units, users and positions. Users no longer present are deactivated. |
 | [CVR via Datafordeleren](integrations/cvr.md) | Outbound, read | Enriches suppliers with name, address and contact information looked up by CVR number (through a Datafordeler middleware). |
-| DBS (Tilsynsplatformen) | Outbound, read | Imports supervision/audit records and creates follow-up tasks. |
+| [DBS (Tilsynsplatformen)](integrations/dbs.md) | Outbound, read | Imports supervision/audit records and creates follow-up tasks. |
 | KLE-Online | Outbound, read | Nightly synchronisation of the KLE taxonomy (main groups, groups, subjects). A bundled snapshot is used until the first sync. |
 | [Mail (SMTP)](integrations/mail.md) | Outbound | Deadline reminders, notifications and report delivery. STARTTLS on port 587. |
 | SAML 2.0 IdP | Inbound login | User authentication — see below. |
