@@ -6,7 +6,7 @@ has_children: true
 ---
 # Integrations
 ## Kitos
-Kitos is used to fetch it-systems and suppliers and create create them automatically in OS2compliance.  
+Henter IT-systemer, anvendelser, kontrakter og leverandører fra KITOS og opretter dem automatisk som aktiver i OS2compliance. Kritikalitet, arkiveringspligt, risikovurderinger og konsekvensanalyser skrives tilbage til KITOS. Se [Kitos](kitos.md) for den fulde feltoversigt.  
   
 ## OS2sync
 Is used to fetch users and organisations, in time hopefully KLE as well.  
