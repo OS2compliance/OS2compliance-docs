@@ -16,4 +16,7 @@ See [development](development.md) for instructions on how to get started develop
 See [hosting](hosting.md) for instructions on how to host the application.  
 
 ## API
-See the [API reference](api/api.md) for the OS2compliance REST API — a readable alternative to the interactive Swagger UI.  
+See the [API reference](api/api.md) for the OS2compliance REST API — a readable alternative to the interactive Swagger UI.
+
+## FAQ
+Se [FAQ](faq.md) for svar om websikkerhed, login, brugerstyring samt logning og revisionsspor.
