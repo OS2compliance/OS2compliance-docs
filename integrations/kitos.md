@@ -25,7 +25,7 @@ Synkroniseringen kører automatisk efter et fast skema. Hvert IT-system i KITOS 
 | Rettighedshaver (navn + CVR) | Leverandør — oprettes automatisk hvis den ikke findes i forvejen |
 | Systemforside → Referencer vedr. systemet (URL) | Links på aktivet — kun hvis indstillingen *Aktiver → kilde til links* står på dette valg |
 
-Når et aktiv oprettes første gang, sættes derudover en række standardværdier, som efterfølgende kan rettes i OS2compliance: aktivtype *IT-system*, status *Ikke påbegyndt*, kritikalitet *Ikke kritisk* og databehandleraftale *Nej*.
+Når et aktiv oprettes første gang, sættes derudover en række standardværdier, som efterfølgende kan rettes i OS2compliance: aktivtype *IT-system*, status *Ikke påbegyndt* og kritikalitet *Ikke kritisk*. Databehandleraftale står blank.
 
 ### IT-systemanvendelse
 
@@ -37,7 +37,7 @@ Når et aktiv oprettes første gang, sættes derudover en række standardværdie
 | Roller | Systemejer, Systemansvarlig og Driftsansvarlig — se [Opsætning](#opsætning) |
 | Lokale referencer → Dokumenttitel (URL) | Links på aktivet — kun hvis indstillingen *Aktiver → kilde til links* står på dette valg |
 
-Anvendelser der ikke er gyldige i KITOS, springes over.
+Er en anvendelse ikke gyldig i KITOS, sættes aktivet inaktivt, og felterne ovenfor opdateres ikke. Se [Aktiv eller inaktiv](#aktiv-eller-inaktiv).
 
 ### IT-kontrakt
 
@@ -47,7 +47,7 @@ Anvendelser der ikke er gyldige i KITOS, springes over.
 | Kontraktforside → Gyldig til | Kontraktophør |
 | Opsigelse → Opsigelsesfrist (måneder) | Opsigelsesvarsel |
 
-Kun gyldige kontrakter behandles. Er et system knyttet til flere kontrakter, gælder værdierne fra den senest behandlede.
+Kontraktdata hentes også fra kontrakter der er ophørt. Løber der en kontrakt på anvendelsen, er det dens værdier der vises. Er alle ophørt, vises den der udløb senest, og aktivet sættes inaktivt.
 
 ### Brugere og roller
 
@@ -55,9 +55,17 @@ Alle brugere i kommunens KITOS-organisation hentes og kobles til brugere i OS2co
 
 Kommunens rolleliste fra KITOS hentes samtidig, så den kan vælges i indstillingerne.
 
-### Sletning
+### Aktiv eller inaktiv
 
-Slettes et IT-system eller en anvendelse i KITOS, sættes det tilsvarende aktiv inaktivt i OS2compliance. Aktivet bevares med sine risikovurderinger og konsekvensanalyser, og den tidligere KITOS-nøgle gemmes på aktivet.
+Om et aktiv er aktivt, styres fra KITOS og er skrivebeskyttet i OS2compliance. Aktivet sættes inaktivt når
+
+* anvendelsen har livscyklusfasen *Ikke i brug* eller ikke er gyldig i KITOS. Fasen *Ubesluttet* eller en manglende fase inaktiverer ikke
+* alle kontrakter på anvendelsen er udløbet eller opsagt. En kontrakt der endnu ikke er startet, eller som er spærret af en ugyldig hovedkontrakt, tæller ikke som ophørt
+* IT-systemet eller anvendelsen slettes i KITOS. Den tidligere KITOS-nøgle gemmes på aktivet, men det synkroniseres ikke længere
+
+Aktivet bevares med sine risikovurderinger og konsekvensanalyser. Ændres fasen, eller løber en kontrakt igen, bliver aktivet aktivt igen. Efter en ny kontrakt kan det tage op til et døgn.
+
+Der kan sendes en mail når synkroniseringen inaktiverer et aktiv eller opretter et nyt. Modtagere og de to hændelser slås til under **Indstillinger**, og teksten rettes under **Mailskabeloner**.
 
 ## Fra OS2compliance til KITOS
 
@@ -141,4 +149,3 @@ Kommunens CVR-nummer i instansens konfiguration bestemmer hvilken KITOS-organisa
 ## Kendte begrænsninger
 
 * Valgene **Systemer → Kontrakt → Indgået** og **Systemer → Kontrakt → Udløber** kan vælges som kilde til henholdsvis kontraktdato og kontraktophør, men er ikke implementeret. Vælges de, synkroniseres den pågældende dato ikke. Brug i stedet de to *Kontraktforside*-valg.
-* Indstillingen **Kilde til kontraktophør** læses ikke ved synkronisering — kontraktophør følger indstillingen *Kilde til kontraktdato*. Med standardopsætningen, hvor ingen af de to er valgt, hentes Kontraktdato fra *Gyldig fra* og Kontraktophør fra *Gyldig til* som forventet.
