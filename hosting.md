@@ -5,12 +5,18 @@ nav_order: 6
 ---
 # Hosting
 OS2compliance is a Java spring application, that can compile to a jar file and be run with a JDK.  
-To make it easier, we create docker images where the JDK is build in, so all it really takes is docker, a database server and some configuration.
+To make it easier, we create docker images where the JDK is build in, so all it really takes is docker, a database server, object storage and some configuration.
 
 ## Requirements
 * Environment capable of running docker containers.  
 * MySQL or MariaDB database server.  
+* S3-compatible object storage (eg. Amazon S3, UpCloud Object Storage etc.)  
 * A SAML IDP (eg. AD-FS, OS2faktor etc.)  
+
+### Hardware
+OS2compliance needs few resources. Recommended for a server dedicated to the OS2compliance container: 2 vCPU, 2 GB RAM and 20 GB disk. Application data lives in the database and object storage, so the disk mainly holds the operating system, Docker images and container logs.
+
+The database stays small, since files are kept in object storage and documents only as links. If the database runs on the same server, add resources for it.
 
 ## Docker
 Docker images are released automatically. They are tagged as follows:
